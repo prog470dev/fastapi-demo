@@ -10,10 +10,13 @@ DB_PORT = os.getenv("DB_PORT", "3306")
 DB_NAME = os.getenv("DB_NAME", "demo")
 
 DB_URL = (
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/?charset=utf8mb4"
+)
+DEMO_DB_URL = (
     f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}?charset=utf8mb4"
 )
 
-db_engine = create_engine(DB_URL, echo=True)
+db_engine = create_engine(DEMO_DB_URL, echo=True)
 db_session = sessionmaker(autocommit=False, autoflush=False, bind=db_engine)
 
 Base = declarative_base()
