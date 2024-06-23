@@ -22,7 +22,7 @@ if config.config_file_name is not None:
 from api.db import Base
 target_metadata = Base.metadata
 
-from api.models.task import Task, Done  # noqa: F401
+import api.models.task # noqa: F401
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
