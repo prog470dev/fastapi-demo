@@ -28,8 +28,8 @@ from api.models.task import Task, Done  # noqa: F401
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
-from api.db import DB_URL
-config.set_main_option("sqlalchemy.url", DB_URL)
+from api.db import DEMO_DB_URL
+config.set_main_option("sqlalchemy.url", DEMO_DB_URL)
 
 
 def run_migrations_offline() -> None:
