@@ -29,9 +29,7 @@ def create_database():
         with root.connect() as conn:
             conn.execute(text(f"CREATE DATABASE {DB_NAME}"))
         print("Database created")
-    
-    Base.metadata.create_all(bind=db_engine)
-    print("Tables created")
+        print("run \"alembic upgrade head\"")
 
 if __name__ == "__main__":
     create_database()
